@@ -28,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            */
           args: {
             type: Object,
-            observer: '_exec'
+            observer: 'exec'
           },
 
           /**
@@ -41,8 +41,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         };
       }
 
-      _exec() {
-        console.log('exec');
+      /**
+       * Run the command.
+       */ 
+      exec() {
         if (!this.args) { return; }
         fs[this.exec](this.args, (err, results) => {
           this.results = results;
